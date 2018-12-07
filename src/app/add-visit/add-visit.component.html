@@ -1,0 +1,76 @@
+<div class="container" id="main-con1">
+  <div class="row">
+    <br/>
+    <div class="col s6">
+      <button class="btn waves-effect waves-light" type="button" name="action" (click)="changeShowStatus()">Add Visit
+        <i class="material-icons right">send</i>
+      </button>
+    </div>
+    <div class="col s6">
+      <h5>Visits</h5><br/>
+    </div>
+  </div>
+  <div class="row">
+    <app-crm-visits [visits]="visits"></app-crm-visits>
+  </div>
+</div>
+<br/>
+<br/>
+<div class="container" id="main-con" [hidden]="!showStatus">
+<div class="row">
+<h5 style="text-align: left">Add A Visit</h5>
+<div class="row">
+  <form #visitForm="ngForm" class="col s12 visitForm" id="visitForm">
+    <div class="row">
+      <div class="input-field col s4">
+        <input type="text" class="form-control" id="billNo" name="billNo" 
+          [(ngModel)]="billNo">
+        <label for="Bill Number">Bill Number</label>
+      </div>
+      <div class="input-field col s4">
+        <input type="text" class="form-control" id="memberNo" name="memberNo" 
+          [(ngModel)]="memberNo">
+        <label for="Member ID">Member ID</label>
+      </div>
+      <div class="input-field col s4">
+        <input type="number" class="form-control" id="billAmt" name="billAmt" 
+          [(ngModel)]="billAmt">
+        <label for="Bill Amount">Bill Amount</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s4">
+        <input type="text" class="datepicker" name="dateOfVisit" id="dateOfVisit">
+        <label for="Date Of Visit">Date of Visit</label>
+      </div>
+      <div class="input-field col s4">
+        <select class="form-control" id="visitBranch" name="visitBranch"
+           [(ngModel)]="visitBranch">
+          <option>Mumbai</option>
+          <option>Chennai</option>
+          <option>Hyderabad</option>
+          <option>Bangalore</option>
+          <option>Delhi</option>
+        </select>
+        <label for="Branch Visited">Branch Visited</label>
+      </div>
+      <div class="input-field col s4">
+        <input type="number" class="form-control" [(ngModel)]="overallFeedback" name="feedback" id="feedback">
+        <label for="Overall Feedback">Rate us out of 5!</label>
+      </div>
+    </div>
+  </form>
+  <br/>
+  <button class="btn waves-effect waves-light" type="submit" name="action" (click)="addVisit()">Submit
+    <i class="material-icons right">send</i>
+  </button>&nbsp;&nbsp;&nbsp;
+  <button class="btn waves-effect waves-light" type="button" name="action" id="resetBtn" (click)="visitForm.reset()">Reset
+    <i class="material-icons right">refresh</i>
+  </button>
+  <br/>
+  <br/>
+  </div>
+</div>
+</div>
+<br/>
+<br/>

@@ -1,0 +1,32 @@
+    <div class="col s12">
+      <table class="striped">
+        <thead class="red lighten-1" style="color: white;">
+          <th>Membership No.</th>
+          <th>Member Name</th>
+          <th>Membership Start<br/>Date</th>
+          <th>Membership End<br/>Date</th>
+          <th>Member Contact</th>
+          <th>Member Email</th>
+          <th>Member DOB</th>
+          <th>Member Address</th>
+          <th>Member Age</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let customer of customers">
+            <td>{{customer.customerMemNo}}</td>
+            <td>{{customer.customerName}}</td>
+            <td>{{customer.formatted_customerMemStartDate}}</td>
+            <td>{{customer.formatted_customerMemEndDate}}</td>
+            <td>{{customer.customerPhone}}</td>
+            <td>{{customer.customerEmail}}</td>
+            <td>{{customer.formatted_customerDob}}</td>
+            <td>{{customer.customerAddr}}</td>
+            <td>{{customer.customerAge}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  <!-- <div class="row">
+    <br/>
+    <app-add-member></app-add-member>
+  </div> -->

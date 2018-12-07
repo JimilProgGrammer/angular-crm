@@ -1,0 +1,272 @@
+<div class="container" id="main-con">
+  <div class="row">
+    <br/><br/>
+    <form [formGroup]="feedbackForm" (ngSubmit)="onSubmit()" class="col s12 feedbackForm" id="feedbackForm">
+      <div class="row">
+        <!-- Question 1 -->
+        <div class="input-field col s6">
+          <select class="form-control" id="menuVarietyRating"
+            formControlName="menuVarietyRating" (change)="parameterRated('menuVarietyRating')">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+          <label for="Menu Variety">How would you rate the selection of items in the menu?</label>
+          <div *ngIf="feedbackForm.controls['menuVarietyRating'].hasError('required')" [class.errorClass]="feedbackForm.controls['menuVarietyRating'].hasError('required')">
+            This is a required field!
+          </div>
+        </div>
+        <!-- Question 2 -->
+        <div class="input-field col s6">
+          <select class="form-control" id="foodQualityRating" 
+            formControlName="foodQualityRating" (change)="parameterRated('foodQualityRating')">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+          <label for="Food Quality">How would you rate the overall quality of the food?</label>
+          <div *ngIf="feedbackForm.controls['foodQualityRating'].hasError('required')" [class.errorClass]="feedbackForm.controls['foodQualityRating'].hasError('required')">
+            This is a required field!
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <!-- Question 3 -->
+        <div class="input-field col s6">
+            <select class="form-control" id="foodTasteRating" 
+            formControlName="foodTasteRating" (change)="parameterRated('foodTasteRating')">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+          <label for="Food Taste">How would you rate the overall taste of the food you ordered?</label>
+          <div *ngIf="feedbackForm.controls['foodTasteRating'].hasError('required')" [class.errorClass]="feedbackForm.controls['foodTasteRating'].hasError('required')">
+            This is a required field!
+          </div>
+        </div>
+        <!-- Question 4 -->
+        <div class="input-field col s6">
+            <select class="form-control" id="ambienceRating" 
+             formControlName="ambienceRating" (change)="parameterRated('ambienceRating')">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          <label for="Ambience">How would you rate the ambience and cleanliness of the eating area?</label>
+          <div *ngIf="feedbackForm.controls['ambienceRating'].hasError('required')" [class.errorClass]="feedbackForm.controls['ambienceRating'].hasError('required')">
+            This is a required field!
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <!-- Question 5 -->
+        <div class="input-field col s6">
+          <select class="form-control" id="serviceRating" 
+           formControlName="serviceRating" (change)="parameterRated('serviceRating')">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+          <label for="Service">How would you rate the overall service?</label>
+          <div *ngIf="feedbackForm.controls['serviceRating'].hasError('required')" [class.errorClass]="feedbackForm.controls['serviceRating'].hasError('required')">
+            This is a required field!
+          </div>
+        </div>
+        <!-- Question 6 -->
+        <div class="input-field col s6">
+            <select class="form-control" id="waitTimeRating" 
+             formControlName="waitRating" (change)="parameterRated('waitRating')">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+            <label for="Waiting Time">How long did you have to wait to get a table?</label>
+            <div *ngIf="feedbackForm.controls['waitRating'].hasError('required')" [class.errorClass]="feedbackForm.controls['waitRating'].hasError('required')">
+              This is a required field!
+            </div>    
+        </div>
+      </div>
+      <div class="row">
+        <!-- Question 7 -->
+        <div class="input-field col s6">
+          <select class="form-control" id="reservationRating" 
+           formControlName="reservationRating" (change)="parameterRated('reservationRating')">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+          <label for="Reservation">How would you rate the reservation system, if you booked a reservation?</label>
+          <div *ngIf="feedbackForm.controls['reservationRating'].hasError('required')" [class.errorClass]="feedbackForm.controls['reservationRating'].hasError('required')">
+            This is a required field!
+          </div>
+        </div>
+        <!-- Question 8 -->
+        <div class="input-field col s6">
+          <select class="form-control" id="recommendRating" 
+           formControlName="recommendRating" (change)="parameterRated('recommendRating')">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+          <label for="Recommendation">How likely are you to recommend us to a friend or family member?</label>
+          <div *ngIf="feedbackForm.controls['recommendRating'].hasError('required')" [class.errorClass]="feedbackForm.controls['recommendRating'].hasError('required')">
+            This is a required field!
+          </div>
+        </div>
+      </div>
+      <!-- Section Divider -->
+      <div class="input-field col s12">
+        <h6>User Details: </h6>
+      </div>
+      <!-- User Details Section -->
+      <div class="row">
+        <!-- Username -->
+        <div class="input-field col s6">
+          <input #userName type="text" class="form-control" id="userName" 
+            formControlName="userName">
+          <label for="username">Username: </label>
+          <div *ngIf="feedbackForm.controls['userName'].hasError('required')" [class.errorClass]="feedbackForm.controls['userName'].hasError('required')">
+            This is a required field!
+          </div>
+        </div>
+        <!-- Email ID -->
+        <div class="input-field col s6">
+          <input #userEmail type="email" class="form-control" id="userEmail" 
+            formControlName="userEmail">
+          <label for="userEmail">Email ID: </label>
+          <div *ngIf="feedbackForm.controls['userEmail'].hasError('required')" [class.errorClass]="feedbackForm.controls['userEmail'].hasError('required')">
+            This is a required field!
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <!-- Phone Number -->
+        <div class="input-field col s4">
+          <input #userPhone type="number" class="form-control" id="userPhone" 
+           formControlName="userPhone">
+          <label for="userPhone">Phone No: </label>
+          <div *ngIf="feedbackForm.controls['userPhone'].hasError('required')" [class.errorClass]="feedbackForm.controls['userPhone'].hasError('required')">
+            This is a required field!
+          </div>
+          <div *ngIf="feedbackForm.controls['userPhone'].hasError('invalidPhoneNo')" [class.errorClass]="feedbackForm.controls['userPhone'].hasError('invalidPhoneNo')">
+            Please enter correct Phone Number!
+          </div>
+        </div>
+        <!-- Lookup Button -->
+        <div class="input-field col s2">
+          <button class="btn waves-effect waves-light" type="button" name="action" (click)="performLookup()">
+            Lookup
+            <i class="material-icons">
+              search
+            </i>
+          </button> 
+        </div>
+        <!-- Hidden Modal Trigger -->
+        <div class="input-field">
+          <button #modalTrigger data-target="modal1" class="btn modal-trigger" hidden>Modal</button>
+        </div>
+        <!-- Modal Structure -->
+        <div id="modal1" class="modal">
+          <div class="modal-content" style="background-color: whitesmoke;">
+            <app-add-member [showTable]="false" [showStatus1]="true">
+
+            </app-add-member>
+          </div>
+          <div class="modal-footer" style="background-color: whitesmoke;">
+            <a class="modal-close waves-effect waves-green btn-flat">Close</a>
+          </div>
+        </div>
+        <!-- Date Of Birth -->
+        <div class="input-field col s6">
+          <input #userDob type="text" class="datepicker" formControlName="userDob" id="userDob">
+          <label for="Birthdate">Birth Date: </label>
+          <div *ngIf="feedbackForm.controls['userDob'].hasError('required')" [class.errorClass]="feedbackForm.controls['userDob'].hasError('required')">
+            This is a required field!
+          </div>
+        </div>
+      </div>
+      <!-- Section Divider -->
+      <div class="input-field col s12">
+        <h6>Visit Details: </h6>
+      </div>
+      <!-- Visit Details Section -->
+      <div class="row">
+        <!-- Bill Number -->
+        <div class="input-field col s6">
+          <input type="text" class="form-control" id="billNo" 
+            formControlName="billNo">
+          <label for="Bill Number">Bill Number:</label>
+          <div *ngIf="feedbackForm.controls['billNo'].hasError('required')" [class.errorClass]="feedbackForm.controls['billNo'].hasError('required')">
+            This is a required field!
+          </div>
+        </div>
+        <!-- Bill Amount -->
+        <div class="input-field col s6">
+          <input type="number" class="form-control" id="billAmt" 
+            formControlName="billAmt">
+          <label for="Bill Amount">Bill Amount:</label>
+          <div *ngIf="feedbackForm.controls['billAmt'].hasError('required')" [class.errorClass]="feedbackForm.controls['billAmt'].hasError('required')">
+            This is a required field!
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <!-- Date Of Visit -->
+        <div class="input-field col s6">
+          <input #input type="text" class="datepicker" formControlName="visitDate" id="visitDate">
+          <label for="Visit date">Visit Date:</label>
+          <div *ngIf="feedbackForm.controls['visitDate'].hasError('required')" [class.errorClass]="feedbackForm.controls['visitDate'].hasError('required')">
+            This is a required field!
+          </div>
+        </div>
+        <!-- Membership Number -->
+        <div class="input-field col s6">
+          <input type="text" class="form-control" id="membershipNo"
+            formControlName="membershipNo">
+          <label for="Membership Number">Membership Number:</label>
+          <div *ngIf="feedbackForm.controls['membershipNo'].hasError('required')" [class.errorClass]="feedbackForm.controls['membershipNo'].hasError('required')">
+            This is a required field!
+          </div>
+        </div>
+      </div>
+      <!-- User Feedback -->
+      <div class="row">
+        <div class="input-field col s8">
+          <textarea id="feedback" class="materialize-textarea" formControlName="feedback"></textarea>
+          <label for="textarea1">Textarea</label>
+          <div *ngIf="feedbackForm.controls['feedback'].hasError('required')" [class.errorClass]="feedbackForm.controls['feedback'].hasError('required')">
+            This is a required field!
+          </div>
+        </div>
+      </div>
+    </form>
+    <br/>
+    <button class="btn waves-effect waves-light" type="submit" name="action" [disabled]="feedbackForm.invalid">Submit
+      <i class="material-icons right">send</i>
+    </button>
+    &nbsp;&nbsp;&nbsp;
+    <button class="btn waves-effect waves-light" type="button" name="action" (click)="feedbackForm.reset()">Reset
+      <i class="material-icons right">refresh</i>
+    </button>
+    <br/>
+    <br/>
+  </div>
+</div>
+<br/>
+<br/>

@@ -4,11 +4,58 @@
   <meta charset="utf-8">
   <title>Crm</title>
   <base href="/">
-
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <!-- Materialize CSS -->
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+  <!-- Picker.js -->
+  <script src="https://cdn.jsdelivr.net/npm/pickadate@3.5.6/lib/legacy.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pickadate@3.5.6/lib/picker.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pickadate@3.5.6/lib/picker.date.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pickadate@3.5.6/lib/picker.time.min.js"></script>
+  <!-- Google Material Icons -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script>
+
+    //Side Nav Plugin Activate
+    $(document).ready(function(){
+       $('.sidenav').sidenav();
+    });
+
+    //Dropdown Plugin Activate
+    // $(document).ready(function(){
+    //   $('select').formSelect();
+    // });
+
+    //Datepicker Plugin Activate
+    // $(document).ready(function() {
+    //   $('.datepicker').datepicker({
+    //     autoClose : true,
+    //     format : 'mm/dd/yyyy',
+    //     editable : true
+    //   });
+    //   //$('.datepicker').datepicker();
+    // });
+
+    //Dropdown Menu item plugin activate
+    $(document).ready(function() {
+      $(".dropdown-trigger").dropdown();
+    });
+
+    //Collapsible Plugin Activate
+    $(document).ready(function(){
+      $('.collapsible').collapsible();
+    });
+
+  </script>
+  
 </head>
-<body>
+<body class="z-depth-0">
   <app-root></app-root>
 </body>
 </html>

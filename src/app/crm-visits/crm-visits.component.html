@@ -1,0 +1,27 @@
+
+    <div class="col s12">
+      <table class="striped">
+        <thead class="red lighten-1" style="color: white;">
+          <th>Bill Number</th>
+          <th>Date of Visit</th>
+          <th>Member ID</th>
+          <th>Bill Amount</th>
+          <th>Branch Visited</th>
+          <th>Overall Feedback</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let visit of visits">
+            <td>{{visit.billNo}}</td>
+            <td>{{visit.date_formatted}}</td>
+            <td>{{visit.memberNo}}</td>
+            <td>{{visit.billAmt}}</td>
+            <td>{{visit.visitBranch}}</td>
+            <td>{{visit.overallFeedback}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  <!-- <div class="row">
+    <br/>
+    <app-add-member></app-add-member>
+  </div> -->

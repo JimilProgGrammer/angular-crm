@@ -1,0 +1,88 @@
+<div class="container" id="main-con1" *ngIf="showTable">
+  <div class="row" *ngIf="showTable">
+    <br/>
+    <div class="col s6" *ngIf="showTable">
+      <button class="btn waves-effect waves-light" type="button" name="action" (click)="changeShowStatus()">Add Member
+        <i class="material-icons right">send</i>
+      </button>
+    </div>
+    <div class="col s6" *ngIf="showTable">
+      <h5>Customers</h5><br/>
+    </div>
+  </div>
+  <div class="row" *ngIf="showTable">
+    <app-crm-customers [customers]="customers"></app-crm-customers>
+  </div>
+</div>
+<br/>
+<br/>
+<div class="container" id="main-con" [hidden]="!showStatus1">
+<div class="row">
+<h5 style="text-align: left">Add Member</h5>
+<div class="row">
+  <form #memberForm="ngForm" class="col s12 memberForm" id="memberForm">
+    <div class="row">
+      <div class="input-field col s6">
+        <input type="text" class="form-control" id="customerMemNo" name="customerMemNo" 
+          [(ngModel)]="customerMemNo">
+        <label for="Membership No">Membership Number</label>
+      </div>
+      <div class="input-field col s6">
+        <input type="text" class="form-control" id="customerName" name="customerName" 
+          [(ngModel)]="customerName">
+        <label for="Member Name">Name</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <input type="text" class="form-control" id="customerPhone" name="customerPhone" 
+          [(ngModel)]="customerPhone">
+        <label for="Member's Contact">Phone Number</label>
+      </div>
+      <div class="input-field col s6">
+        <input type="text" class="form-control" id="customerEmail" name="customerEmail" 
+          [(ngModel)]="customerEmail">
+        <label for="Member's Email">Email Address</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s4">
+        <input type="text" class="datepicker" name="customerDob" id="customerDob">
+        <label for="Birthdate">Birth Date</label>
+      </div>
+      <div class="input-field col s4">
+        <input type="text" class="datepicker" name="customerMemStartDate" id="customerMemStartDate">
+        <label for="Membership Start Date">Start Date</label>
+      </div>
+      <div class="input-field col s4">
+        <input type="text" class="datepicker" name="customerMemEndDate" id="customerMemEndDate">
+        <label for="Membership End Date">End Date</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <input type="text" class="form-control" id="customerAddr" name="customerAddr" 
+          [(ngModel)]="customerAddr">
+        <label for="Member's Primary Delivery Address">Residential Address</label>
+      </div>
+      <div class="input-field col s6">
+        <input type="number" class="form-control" id="customerAge" name="customerAge" 
+          [(ngModel)]="customerAge">
+        <label for="Member's Age">Age</label>
+      </div>
+    </div>
+  </form>
+  <br/>
+  <button class="btn waves-effect waves-light" type="submit" name="action" (click)="addMember()">Submit
+    <i class="material-icons right">send</i>
+  </button>&nbsp;&nbsp;&nbsp;
+  <button class="btn waves-effect waves-light" type="button" name="action" (click)="memberForm.reset()">Reset
+    <i class="material-icons right">refresh</i>
+  </button>
+  <br/>
+  <br/>
+  </div>
+</div>
+</div>
+<br/>
+<br/>
